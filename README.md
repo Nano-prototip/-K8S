@@ -12,6 +12,7 @@
 <img width="499" height="136" alt="2_1" src="https://github.com/user-attachments/assets/bd1e0e3c-379e-458c-83cb-2398e27e8c53" />
 <img width="494" height="104" alt="2_2" src="https://github.com/user-attachments/assets/e2248677-79ea-42cc-a41b-715a11c9af52" />
 <img width="689" height="272" alt="2_3" src="https://github.com/user-attachments/assets/4c29642c-aa96-4501-a622-f80e9e515957" />
+
 [deployment](https://github.com/Nano-prototip/-K8S/blob/main/deployment.yml).
 [service](https://github.com/Nano-prototip/-K8S/blob/main/service.yml).
 [pod](https://github.com/Nano-prototip/-K8S/blob/main/pod.yml).
@@ -25,4 +26,5 @@
 
 ### Ответ
 <img width="684" height="545" alt="2_4" src="https://github.com/user-attachments/assets/ea53b11e-5d1a-4b3f-91a8-56b90510d871" />
+
 [deployment](https://github.com/Nano-prototip/-K8S/blob/main/deployment2.yml).
