@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-with-service-deployment
+  labels:
+    app: nginx-with-init-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-with-init-container
+  template:
+    metadata:
+      labels:
+        app: nginx-with-init-container
+    spec:
+      initContainers:
+        - name: wait-for-service
+          image: busybox
+          command:
+            - sh
+            - -c
+            - |
+              # Цикл проверяет доступность nginx-service:80
+              while ! wget --spider --timeout=1 --tries=1 http://service-nginx-multitool:80; do
+                echo "Waiting for nginx-service..."
+                sleep 2
+              done
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
