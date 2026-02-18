@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-and-multitool-deployment
+  labels:
+    app: nginx-and-multitool
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-and-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-and-multitool
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+        - name: multitool
+          image: praqma/network-multitool
+          command: [ "/bin/sh" ]
+          args: [ "-c", "sleep infinity" ]
+          ports:
+            - containerPort: 8080
